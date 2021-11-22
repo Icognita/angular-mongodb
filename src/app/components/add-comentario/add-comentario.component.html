@@ -1,0 +1,36 @@
+<h1>Queremos saber o que você achou das nossas aulas,
+    deixe aqui seu comentário, sugestão ou elogio!
+</h1>
+
+<form #addComentarioForm="ngForm" (submit)="addComentario(addComentarioForm)">
+                   
+ <div class="col-auto">
+        <label  for="nome">Nome:</label>
+        <input
+         type="text" 
+         name="nome" 
+         id="nome" class="form-control mb-2"  
+         placeholder="katia cabrita "
+         ngModel required>
+      </div>
+    
+    <div class="col-auto">
+        <label for="Mensagem">Mensagens</label>
+        <textarea
+         class="form-control" 
+         id="mensagem" 
+         rows="6"
+         name="texto" 
+         ngModel required>
+         </textarea>
+      </div>
+      <div class="col-auto">
+        <button 
+         type="submit" 
+         class="btn btn-primary mb-2"
+         [disabled]="!addComentarioForm.form.valid" >Enviar</button>
+      </div> 
+   
+
+
+</form>

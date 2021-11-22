@@ -1,0 +1,9 @@
+<div *ngFor="let comentario of comentarios">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"> Nome: {{ comentario.nome}} </h5>          
+          <p class="card-text">{{ comentario.texto}}</p>
+         <button class="btn btn-danger" (click)="onDelete(comentario.id)">Delete</button>
+        </div>
+      </div>  
+</div>
