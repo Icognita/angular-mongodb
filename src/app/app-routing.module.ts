@@ -6,6 +6,7 @@ import { JavascriptComponent } from './components/javascript/javascript.componen
 import { ListComentarioComponent } from './components/list-comentario/list-comentario.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { AddComentarioComponent } from './components/add-comentario/add-comentario.component';
 
 const routes: Routes = [
   {
@@ -34,8 +35,11 @@ const routes: Routes = [
   },
   {
     path: "signup", component: SignupComponent
-  }
+  },
 
+  {
+    path: "Comentarios", component: AddComentarioComponent
+  }
 
 
 ];

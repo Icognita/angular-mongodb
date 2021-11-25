@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { AddComentarioComponent } from './components/add-comentario/add-comentario.component';
 import { ListComentarioComponent } from './components/list-comentario/list-comentario.component';
@@ -18,6 +18,8 @@ import{ MatButtonModule } from"@angular/material/button"
 import{  } from"@angular/material"
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { AuthService } from './services/auth.service';
+import { AuthInteceptor } from './services/auth.interceptor';
 
 
 @NgModule({
@@ -49,7 +51,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
    
     
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInteceptor, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

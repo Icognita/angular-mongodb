@@ -4,9 +4,10 @@ const router= express.Router();
 
 //importanto schema do mongodb
 const Comentario = require('../models/comentario');
+const cheCkAuth=require("../midleware/check-auth")
 
 
-router.post("", (req, res) => {
+router.post("",  (req, res) => {
     //criando novo obj no formato do schema, já com id
     const comentario = new Comentario({
         nome: req.body.nome,
@@ -29,7 +30,7 @@ router.get("", (req, res) => {
     });
 });
 
-//metodo delete documento
+//metodo delete documento cheCkAuth
 router.delete("/:id", (req, res) => {
     Comentario.deleteOne({ _id: req.params.id }).then(result => {
         console.log(result);

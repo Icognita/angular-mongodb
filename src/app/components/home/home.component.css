@@ -5,6 +5,9 @@ ul{
     margin: 0;
     
 }
+li{
+    display: flex;
+}
 
 a{
 

@@ -1,10 +1,11 @@
+
 <mat-toolbar color="primary">
   <span>Tach-cursos</span>
   <span class="spacer"></span>
   <ul>
       <li>
-        <a mat-button routerLink="/feedback-alunos" routerLinkActive="mat-accent"> Adm</a>
-        <a mat-button routerLink="/curso-javascript" routerLinkActive="mat-accent"> cursos</a>
+       
+        <!-- <a mat-button routerLink="/quem-somos" routerLinkActive="mat-accent"> Quem somos</a> -->
         <a mat-button routerLink="/home" routerLinkActive="mat-accent"> Home</a>
       </li>
     </ul>
@@ -28,7 +29,8 @@
       <h5 class="card-title"> Nome: {{ comentario.nome}} </h5>  
     </mat-expansion-panel-header>
     <p class="card-text">{{ comentario.texto}}</p>
-    <mat-action-row>
+    userIsAuthenticated
+    <mat-action-row *ngIf=" userIsAuthenticated">
       <button mat-button color="warn" (click)="onDelete(comentario.id)">Delete</button>
     </mat-action-row>
   </mat-expansion-panel>
