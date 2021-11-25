@@ -1,9 +1,37 @@
-<div *ngFor="let comentario of comentarios">
-    <div class="card" style="width: 18rem;">
+<mat-toolbar color="primary">
+  <span>Tach-cursos</span>
+  <span class="spacer"></span>
+  <ul>
+      <li>
+        <a mat-button routerLink="/feedback-alunos" routerLinkActive="mat-accent"> Adm</a>
+        <a mat-button routerLink="/curso-javascript" routerLinkActive="mat-accent"> cursos</a>
+        <a mat-button routerLink="/home" routerLinkActive="mat-accent"> Home</a>
+      </li>
+    </ul>
+</mat-toolbar>
+
+
+<!-- 
+<div multi="true" *ngIf="comentarios.length > 0" >
+    <div class="card" style="width: 18rem;" *ngFor="let comentario of comentarios">
         <div class="card-body">
           <h5 class="card-title"> Nome: {{ comentario.nome}} </h5>          
           <p class="card-text">{{ comentario.texto}}</p>
          <button class="btn btn-danger" (click)="onDelete(comentario.id)">Delete</button>
         </div>
       </div>  
-</div>
+       <p *ngIf="comentarios.length <=0"> Nem um comentário</p> 
+</div>  -->
+<mat-accordion multi="true" *ngIf="comentarios.length > 0">
+   <mat-expansion-panel *ngFor="let comentario of comentarios">
+    <mat-expansion-panel-header>
+      <h5 class="card-title"> Nome: {{ comentario.nome}} </h5>  
+    </mat-expansion-panel-header>
+    <p class="card-text">{{ comentario.texto}}</p>
+    <mat-action-row>
+      <button mat-button color="warn" (click)="onDelete(comentario.id)">Delete</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion> 
+<p class="info-text mat-body-1" *ngIf="comentarios.length <= 0">Nem uma postagem adicionada!</p>
+

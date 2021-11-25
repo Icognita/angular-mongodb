@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { InstitucionalComponent } from './components/institucional/institucional.component';
 import { JavascriptComponent } from './components/javascript/javascript.component';
 import { ListComentarioComponent } from './components/list-comentario/list-comentario.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,13 @@ const routes: Routes = [
     path: 'feedback-alunos',
     component: ListComentarioComponent
   },
+  {
+    path: "login", component: LoginComponent
+  },
+  {
+    path: "signup", component: SignupComponent
+  }
+
 
 
 ];

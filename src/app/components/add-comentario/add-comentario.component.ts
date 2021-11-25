@@ -18,7 +18,9 @@ export class AddComentarioComponent{
       return;
     }    
     this.comentarioService.addComentarios(form.value.nome, form.value.texto);
+    form.resetForm();
   }
+
 
   constructor(public comentarioService:ComentarioService) { }
 
