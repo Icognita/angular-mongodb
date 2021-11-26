@@ -55,11 +55,14 @@ router.post("/login", (req, res, next) => {
       }
       //esse metodo cria um novo token  seguido o objeto de escolha, segundo argumento | insere um segredo . 3| expiresIn tem que vai expira
       const token = jwt.sign({ email: buscarUser.email, userId: buscarUser._id},
-        "senha_secreta_muito_longa", { expiresIn:"1h"}
+        "senha_secreta_muito_longa", 
+        { expiresIn:"1h"} // apos este tempo o usuário é desconectdo
+        
       );
       console.log(token)
       res.status(200).json({
-          token:token
+          token:token,
+          expiresIn:3600 // despois que o token inspira e enviado essa resposta  ao servido
       });
     })
     .catch(err => {

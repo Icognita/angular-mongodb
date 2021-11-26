@@ -23,8 +23,8 @@
       <a *ngIf="userisAuthenticated" mat-button routerLink="/feedback-alunos" routerLinkActive="mat-accent"> Adm</a>
   
      </li>
-      <li>
-        <button mat-button color="warn"> Sair</button>
+      <li  >
+        <button  mat-button (click)="onLogout()" color="warn"> Sair</button>
     </li>
   </ul>
 </mat-toolbar>

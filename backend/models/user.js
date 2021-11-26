@@ -4,7 +4,10 @@ const uniqueValidator =require("mongoose-unique-validator")
 
 const userSchema = mongoose.Schema({
     email: { type: String, required: true, unique:true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    // aluno:{type:String,require:true},
+    // admin:{type:String,require:true}
+
 });
 
 //metodo plugin// que valida um email já existente

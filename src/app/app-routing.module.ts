@@ -7,6 +7,7 @@ import { ListComentarioComponent } from './components/list-comentario/list-comen
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { AddComentarioComponent } from './components/add-comentario/add-comentario.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -24,11 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'curso-javascript',
-    component: JavascriptComponent
+    component: JavascriptComponent,canActivate:[AuthGuard]
   },
   {
     path: 'feedback-alunos',
-    component: ListComentarioComponent
+    component: ListComentarioComponent,canActivate:[AuthGuard]
   },
   {
     path: "login", component: LoginComponent
@@ -46,6 +47,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[AuthGuard]
 })
 export class AppRoutingModule { }

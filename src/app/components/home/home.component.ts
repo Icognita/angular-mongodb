@@ -20,7 +20,13 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.userisAuthenticated =isAuthenticated;
 
     });
+
+    
  }
+ onLogout(){
+  this.authService.logout();
+ }
+
 ngOnDestroy(){
   this.authListenerSubs.unsubscribe();
 

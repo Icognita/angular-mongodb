@@ -5,3 +5,8 @@ mat-form-field {
 mat-spinner {
   margin: auto;
 }
+.input{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
